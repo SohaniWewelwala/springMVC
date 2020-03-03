@@ -1,8 +1,17 @@
 package com.example.spring.springmvc.model;
 
+import javax.persistence.*;
+
+@Entity
 public class Customer {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @Version
+    private int version;
+
     private String firstName;
     private String lastName;
     private String email;
@@ -15,6 +24,14 @@ public class Customer {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getVersion() {
+        return version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
     }
 
     public String getFirstName() {

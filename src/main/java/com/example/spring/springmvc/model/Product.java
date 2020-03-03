@@ -1,9 +1,6 @@
 package com.example.spring.springmvc.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -12,6 +9,10 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @Version
+    private int version;
+
     private String description;
     private BigDecimal price;
     private String imageUrl;
@@ -22,6 +23,14 @@ public class Product {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getVersion() {
+        return version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
     }
 
     public String getDescription() {
