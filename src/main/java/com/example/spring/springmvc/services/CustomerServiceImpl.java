@@ -4,11 +4,12 @@ import com.example.spring.springmvc.model.ApiResponse;
 import com.example.spring.springmvc.model.Customer;
 import com.example.spring.springmvc.model.Product;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.*;
 
-@Component
+@Service
 public class CustomerServiceImpl implements CustomerService {
 
     private Map<Integer, Customer> customers;
