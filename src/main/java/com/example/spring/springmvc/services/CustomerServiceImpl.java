@@ -3,6 +3,7 @@ package com.example.spring.springmvc.services;
 import com.example.spring.springmvc.model.ApiResponse;
 import com.example.spring.springmvc.model.Customer;
 import com.example.spring.springmvc.model.Product;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,7 @@ import java.math.BigDecimal;
 import java.util.*;
 
 @Service
+@Profile("map")
 public class CustomerServiceImpl implements CustomerService {
 
     private Map<Integer, Customer> customers;
